@@ -1,6 +1,6 @@
 ---
 title: "Agawu Lab"
-subtitle: "Using epidemiology and data science to measure and improve clinical outcomes"
+subtitle: "Measurement and Meaning in Gastrointestinal Chronic Complex Conditions (GI CCCs)"
 page-layout: full
 toc: false
 ---
@@ -10,7 +10,7 @@ toc: false
 
 # Welcome to the Agawu Lab
 
-We are a research group at **Children's Hospital Los Angeles** and **USC Keck School of Medicine** focused on improving clinical outcomes for children with complex gastrointestinal conditions.
+We are a research group at **Children's Hospital Los Angeles** and **USC Keck School of Medicine** focused on improving clinical outcomes for children with Gastrointestinal Chronic Complex Conditions (GI CCCs).
 
 Our work combines **clinical epidemiology**, **caregiver-centered outcomes research**, and **data science** to understand and address the challenges facing pediatric patients with intestinal failure and their families.
 
