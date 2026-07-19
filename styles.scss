@@ -1,323 +1,147 @@
 /*-- scss:defaults --*/
+/* ClearViz theme — colour palettes & visual system by Cara Thompson.
+   https://www.cararthompson.com/ · https://github.com/cararthompson/clearviz */
 
-// Custom Color Palette
-$charcoal: #2d2e2f;      // Dark charcoal - navbar, headings
-$olive: #4b651a;         // Olive green - primary accent
-$steel-blue: #6691ad;    // Steel blue - secondary
-$pink: #f97dcf;          // Pink - highlights
-$berry: #aa3a5d;         // Berry/magenta - accent
+// ClearViz tokens  (old name -> new)
+$dark-text:  #2d2e2f;   // was $charcoal
+$dark-green: #4b651a;   // was $olive
+$green:      #749b92;
+$blue:       #6691ad;   // was $steel-blue
+$pale-blue:  #b2c8d6;
+$light-blue: #b5c6d5;
+$cerise:     #aa3a5d;   // was $berry
+$pink:       #f97dcf;
+$orange:     #f57354;
+$plum:       #613743;
+$gold:       #deb605;   // NEW — lead accent
+$tint:       #f3f6f8;   // figure / code canvas
+$paper:      #f7f7f5;   // page canvas
 
-// Map to Bootstrap variables
-$primary: $olive;
-$secondary: $steel-blue;
-$success: $olive;
-$info: $steel-blue;
-$warning: $pink;
-$danger: $berry;
+// Bootstrap mappings — link/primary is now blue; gold is accent-only (fails text contrast)
+$primary:   $blue;
+$secondary: $dark-green;
+$success:   $dark-green;
+$info:      $blue;
+$warning:   $gold;
+$danger:    $cerise;
 
-// Text colors
-$body-color: #3d3d3d;
-$headings-color: $charcoal;
+$body-color: $dark-text;
+$body-bg:    $paper;
+$headings-color: $dark-text;
 
-// Background
-$body-bg: #ffffff;
-
-// Navbar colors
-$navbar-bg: $charcoal;
+$navbar-bg: $dark-text;
 $navbar-fg: #ffffff;
 
-// Link colors
-$link-color: $olive;
+$link-color: #41708f;      // AA-safe blue
+$link-hover-color: $cerise;
 
-// Font families
-$font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$headings-font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+// Fonts
+$font-family-sans-serif: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$headings-font-family: "Poppins", "Source Sans 3", sans-serif;
+$font-family-monospace: "Source Code Pro", ui-monospace, SFMono-Regular, monospace;
+$headings-font-weight: 700;
 
 /*-- scss:rules --*/
 
-// Hero section styling
+// Hero — flat charcoal + gold signature rule (was a 135deg gradient)
 .hero-section {
-  background: linear-gradient(135deg, $charcoal 0%, lighten($charcoal, 15%) 100%);
-  color: white;
+  background: $dark-text;
+  color: $paper;
   padding: 4rem 2rem;
   margin: -1rem -1rem 2rem -1rem;
-  border-radius: 0;
 
-  h1 {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-  }
+  h1 { color: $paper; font-family: "Poppins", sans-serif; font-size: 2.6rem; font-weight: 700; margin-bottom: 1.25rem; }
+  p  { font-size: 1.2rem; line-height: 1.75; max-width: 800px; color: rgba(247,247,245,0.85); }
 
-  p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    max-width: 800px;
-  }
+  &::after { content: ""; display: block; width: 120px; height: 6px; background: $gold; border-radius: 3px; margin-top: 1.75rem; }
 
-  .btn {
-    margin-right: 0.75rem;
-    margin-top: 1rem;
-  }
-
-  .btn-primary {
-    background-color: $olive;
-    color: white;
-    border-color: $olive;
-
-    &:hover {
-      background-color: darken($olive, 10%);
-      border-color: darken($olive, 10%);
-    }
-  }
-
-  .btn-outline-primary {
-    border-color: white;
-    color: white;
-
-    &:hover {
-      background-color: white;
-      color: $charcoal;
-    }
-  }
+  .btn { margin-right: 0.75rem; margin-top: 1rem; }
+  .btn-primary { background-color: $blue; border-color: $blue; color: #fff;
+    &:hover { background-color: darken($blue, 8%); border-color: darken($blue, 8%); } }
+  .btn-outline-primary { border-color: rgba(247,247,245,0.6); color: $paper;
+    &:hover { background-color: $gold; border-color: $gold; color: $dark-text; } }
 }
 
-// Headings
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  color: $headings-color;
-}
-
+// Headings — Poppins + cerise rule under h2
+h1, h2, h3, h4, h5, h6 { font-family: "Poppins", sans-serif; font-weight: 700; color: $headings-color; }
 h2 {
-  border-bottom: 2px solid $steel-blue;
-  padding-bottom: 0.5rem;
-  margin-top: 2rem;
+  border-bottom: none; padding-bottom: 0.4rem; margin-top: 2.25rem;
+  &::after { content: ""; display: block; width: 44px; height: 4px; background: $cerise; border-radius: 2px; margin-top: 0.5rem; }
 }
+h3 { color: $dark-green; font-weight: 600; }
 
-h3 {
-  color: $olive;
-}
+// Navbar — active/hover gets a gold underline
+.navbar { box-shadow: 0 2px 4px rgba(45,46,47,0.12); }
+.navbar-brand { font-family: "Poppins", sans-serif; font-weight: 700; }
+.navbar .nav-link.active, .navbar .nav-link:hover { box-shadow: inset 0 -3px 0 $gold; }
 
-// Navigation
-.navbar {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+// Callouts (Quarto keeps its left rule — mapped to on-brand colours)
+.callout { border-radius: 0.5rem; margin: 1rem 0; }
+.callout-note { border-left-color: $blue; }
+.callout-tip { border-left-color: $dark-green; }
+.callout-warning { border-left-color: $cerise; }
 
-.navbar-brand {
-  font-weight: 700;
-}
-
-// Cards and callouts
-.callout {
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-}
-
-.callout-note {
-  border-left-color: $steel-blue;
-}
-
-.callout-tip {
-  border-left-color: $olive;
-}
-
-.callout-warning {
-  border-left-color: $berry;
-}
-
-// Project cards
+// Project cards — TOP accent, not a left stripe (retires the AI-slop trope)
 .project-card {
-  background-color: #f8f9fa;
+  background: #fff;
   padding: 1.5rem;
+  border: 1px solid #e2e9ee;
+  border-top: 4px solid $gold;
   border-radius: 0.5rem;
-  border-left: 4px solid $olive;
   margin: 1rem 0;
 }
 
-// Metric cards for publications page
+// Metric cards — flat tint, gold number set in the mono face
 .metric-card {
-  text-align: center;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  border-top: 3px solid $olive;
+  text-align: center; padding: 1.5rem;
+  background: $tint; border: 1px solid #e2e9ee; border-radius: 0.5rem; margin-bottom: 1rem;
 }
-
-.metric-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: $olive;
-}
-
-.metric-label {
-  font-size: 0.9rem;
-  color: $charcoal;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
+.metric-number { font-family: "Source Code Pro", monospace; font-size: 2.5rem; font-weight: 600; color: $gold; }
+.metric-label { font-size: 0.85rem; color: $dark-text; text-transform: uppercase; letter-spacing: 0.5px; }
 
 // Buttons
-.btn {
-  border-radius: 0.375rem;
-  font-weight: 500;
-  padding: 0.5rem 1.25rem;
-  transition: all 0.2s ease;
+.btn { border-radius: 0.375rem; font-weight: 600; padding: 0.5rem 1.25rem; transition: all 0.2s ease; font-family: "Poppins", sans-serif; }
+.btn-primary { background-color: $blue; border-color: $blue;
+  &:hover { background-color: darken($blue, 8%); border-color: darken($blue, 8%); } }
+.btn-outline-primary { color: #41708f; border-color: $blue;
+  &:hover { background-color: $blue; color: #fff; } }
+.btn-outline-secondary { color: $dark-green; border-color: $dark-green;
+  &:hover { background-color: $dark-green; color: #fff; } }
+.btn-accent { background-color: $cerise; border-color: $cerise; color: #fff;
+  &:hover { background-color: darken($cerise, 8%); border-color: darken($cerise, 8%); } }
+
+// Tables — tint header row with a gold underline
+table { margin: 1.5rem 0; }
+th { background-color: $tint; font-weight: 600; color: $dark-text; border-bottom: 2px solid $gold !important; }
+
+img.rounded { border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(45,46,47,0.12); }
+
+// Footer — gold top border, mono attribution
+.nav-footer, .page-footer {
+  margin-top: 3rem; padding: 2rem 0;
+  background-color: $dark-text; border-top: 4px solid $gold;
+  font-size: 0.9rem; color: #e0e0e0;
+  font-family: "Source Code Pro", monospace;
+  a { color: lighten($blue, 18%); &:hover { color: #fff; } }
 }
 
-.btn-primary {
-  background-color: $olive;
-  border-color: $olive;
+.grid { gap: 1.5rem; }
 
-  &:hover {
-    background-color: darken($olive, 10%);
-    border-color: darken($olive, 10%);
-  }
-}
-
-.btn-outline-primary {
-  color: $olive;
-  border-color: $olive;
-
-  &:hover {
-    background-color: $olive;
-    color: white;
-  }
-}
-
-.btn-outline-secondary {
-  color: $steel-blue;
-  border-color: $steel-blue;
-
-  &:hover {
-    background-color: $steel-blue;
-    color: white;
-  }
-}
-
-// Accent button using berry color
-.btn-accent {
-  background-color: $berry;
-  border-color: $berry;
-  color: white;
-
-  &:hover {
-    background-color: darken($berry, 10%);
-    border-color: darken($berry, 10%);
-  }
-}
-
-// Tables
-table {
-  margin: 1.5rem 0;
-}
-
-th {
-  background-color: lighten($steel-blue, 35%);
-  font-weight: 600;
-  color: $charcoal;
-}
-
-// Images
-img.rounded {
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-// Footer
-.page-footer {
-  margin-top: 3rem;
-  padding: 2rem 0;
-  background-color: $charcoal;
-  border-top: 3px solid $olive;
-  font-size: 0.9rem;
-  color: #e0e0e0;
-
-  a {
-    color: lighten($steel-blue, 20%);
-
-    &:hover {
-      color: white;
-    }
-  }
-}
-
-// Grid improvements
-.grid {
-  gap: 1.5rem;
-}
-
-// Responsive adjustments
 @media (max-width: 768px) {
-  .hero-section {
-    padding: 2rem 1rem;
-
-    h1 {
-      font-size: 1.75rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-  }
-
-  .metric-number {
-    font-size: 1.75rem;
-  }
+  .hero-section { padding: 2rem 1rem; h1 { font-size: 1.9rem; } p { font-size: 1rem; } }
+  .metric-number { font-size: 1.9rem; }
 }
 
-// Publication styling
-.publication-entry {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #e2e8f0;
+.publication-entry { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e2e9ee; &:last-child { border-bottom: none; } }
 
-  &:last-child {
-    border-bottom: none;
-  }
-}
+#TOC { border-left: 3px solid $blue; padding-left: 1rem; }
 
-// TOC styling
-#TOC {
-  border-left: 3px solid $steel-blue;
-  padding-left: 1rem;
-}
+a { transition: color 0.2s ease; &:hover { color: $cerise; } }
 
-// Smooth transitions
-a {
-  transition: color 0.2s ease;
+pre { background-color: $tint; border-radius: 0.5rem; padding: 1rem; border-left: 3px solid $blue; }
+code { font-family: "Source Code Pro", monospace; }
 
-  &:hover {
-    color: $berry;
-  }
-}
+blockquote { border-left: 4px solid $gold; padding-left: 1rem; margin-left: 0; color: lighten($dark-text, 20%); font-style: italic; }
 
-// Code blocks
-pre {
-  background-color: #f8f9fa;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  border-left: 3px solid $steel-blue;
-}
-
-// Blockquotes
-blockquote {
-  border-left: 4px solid $olive;
-  padding-left: 1rem;
-  margin-left: 0;
-  color: lighten($charcoal, 20%);
-  font-style: italic;
-}
-
-// Highlight class using pink
-.highlight {
-  background-color: lighten($pink, 20%);
-  padding: 0.1rem 0.3rem;
-  border-radius: 0.2rem;
-}
-
-// Accent text using berry
-.accent {
-  color: $berry;
-}
+.highlight { background-color: rgba(222,182,5,0.25); padding: 0.1rem 0.3rem; border-radius: 0.2rem; }
+.accent { color: $cerise; }
