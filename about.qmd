@@ -119,7 +119,7 @@ Fax: 323-361-3718
 
 ::: {.g-col-12 .g-col-md-6}
 ### Connect
-- [GitHub](https://github.com/atuagawu)
+- [GitHub](https://github.com/agawu-lab)
 - [Google Scholar](https://scholar.google.com/citations?user=ryrSWqsAAAAJ&hl=en)
 - [ORCID](https://orcid.org/0000-0001-5343-5268)
 :::
