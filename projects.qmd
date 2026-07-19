@@ -6,26 +6,26 @@ toc: true
 
 ## Active Research Projects
 
-### Caregiver Burden in Pediatric Intestinal Failure
+### Caregiver Strain in Gastrointestinal Chronic Complex Conditions (GI CCCs)
 
 ::: {.project-card}
 **Status:** Active | **Funding:** *To be added*
 
-Families caring for children with intestinal failure face unique challenges including complex medical regimens, frequent hospitalizations, and significant lifestyle modifications. This project aims to:
+Families caring for children with GI CCCs face unique challenges including complex medical regimens, frequent hospitalizations, and significant lifestyle modifications. This project aims to:
 
-- Develop and validate instruments to measure caregiver burden specific to pediatric intestinal failure
+- Develop and validate instruments to measure caregiver strain
 - Identify modifiable factors associated with caregiver strain
-- Design interventions to support families
+- Design interventions to reduce caregiver strain
 
 **Key Methods:** Survey development, psychometric validation, mixed methods
 :::
 
 ---
 
-### Multi-Center Outcomes in Pediatric Short Bowel Syndrome
+### Clinical Outcomes in Pediatric Short Bowel Syndrome
 
 ::: {.project-card}
-**Status:** Active | **Funding:** *To be added*
+**Status:** Active | **Funding:** *NA*
 
 Leveraging multi-center registry data to understand long-term outcomes in children with short bowel syndrome. Research questions include:
 
@@ -33,23 +33,7 @@ Leveraging multi-center registry data to understand long-term outcomes in childr
 - Risk factors for complications including catheter-related bloodstream infections
 - Health-related quality of life outcomes
 
-**Key Methods:** Cohort studies, survival analysis, machine learning
-:::
-
----
-
-### Health Equity in Pediatric GI Care
-
-::: {.project-card}
-**Status:** Active | **Funding:** *To be added*
-
-Examining disparities in access to specialized care and outcomes for children with complex gastrointestinal conditions:
-
-- Geographic variation in access to intestinal rehabilitation programs
-- Socioeconomic and racial/ethnic disparities in outcomes
-- Policy implications for improving equity
-
-**Key Methods:** Administrative data analysis, geospatial analysis, mixed methods
+**Key Methods:** Cohort studies, survival analysis, 
 :::
 
 ---
@@ -82,13 +66,9 @@ Analysis code for published research projects.
 ### Statistical Analysis
 - R / RStudio
 - Stata
-- SAS
-- Python
 
 ### Machine Learning
-- scikit-learn
 - tidymodels
-- XGBoost
 :::
 
 ::: {.g-col-12 .g-col-md-6}
@@ -96,7 +76,6 @@ Analysis code for published research projects.
 - ggplot2
 - Shiny
 - Quarto
-- Tableau
 
 ### Other Tools
 - REDCap
@@ -111,6 +90,6 @@ Analysis code for published research projects.
 
 ## Collaborations
 
-We welcome collaborations with researchers, clinicians, and patient advocates interested in improving outcomes for children with intestinal failure and their families.
+We welcome collaborations with researchers, clinicians, and patient advocates interested in improving outcomes for children with GI CCCs and their families.
 
 Interested in collaborating? [Contact us](about.qmd#contact).
