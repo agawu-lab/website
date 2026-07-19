@@ -53,7 +53,7 @@ Selected code repositories and reproducible research materials:
 ::: {.callout-note appearance="minimal" icon=false}
 **GitHub Repository**
 Analysis code for published research projects.
-[View on GitHub](https://github.com/agawulab){.btn .btn-sm .btn-outline-primary}
+[View on GitHub](https://github.com/agawu-lab){.btn .btn-sm .btn-outline-primary}
 :::
 
 ---
